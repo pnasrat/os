@@ -1,7 +1,7 @@
 package:
   name: terraform-provider-azurerm
   version: 3.95.0
-  epoch: 0
+  epoch: 1
   description: Terraform provider for Azure Resource Manager
   copyright:
     - license: MPL-2.0
@@ -21,6 +21,10 @@ pipeline:
       expected-commit: ae7b92b9c227e3938248c1edd94f9a28a754825e
       repository: https://github.com/hashicorp/terraform-provider-azurerm
       tag: v${{package.version}}
+
+  - uses: go/bump
+    with:
+      deps: google.golang.org/protobuf@v1.33.0
 
   - uses: go/build
     with:
