@@ -33,6 +33,7 @@ pipeline:
   - uses: go/bump
     with:
       deps: golang.org/x/net@v0.23.0
+      replaces: golang.org/x/net=golang.org/x/net@v0.23.0
       modroot: ${{package.name}}
 
   - pipeline:
